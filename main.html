@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snake</title>
+    <script type="text/javascript" src="vendor/keydrown.min.js"></script>
+    <script type="text/javascript" src="lib/snakeBlock.js"></script>
+    <script type="text/javascript" src="lib/game.js"></script>
+    <script type="text/javascript">
+    function stopKeySrokes(e) {
+        var codes = [38, 37, 39, 40, 32];
+        if (codes.indexOf(e.keyCode) !== -1) {
+            e.preventDefault();
+        }
+    }
+    window.addEventListener('keydown', stopKeySrokes, false);
+    </script>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script type="text/javascript">
+    var canvasEl = document.getElementsByTagName('canvas')[0];
+    theGame = new Snake.Game(canvasEl);
+    </script>
+</body>
+
+</html>
